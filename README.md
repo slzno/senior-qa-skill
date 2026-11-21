@@ -22,39 +22,16 @@ Funciona con Claude Code, Cursor, Codex, OpenCode y otros agentes:
 
 ```bash
 # global (todos tus proyectos)
-npx skills add TU_USUARIO/senior-qa-skill -g
+npx skills add slzno/senior-qa-skill -g
 
 # solo en el proyecto actual
-npx skills add TU_USUARIO/senior-qa-skill
+npx skills add slzno/senior-qa-skill
 
 # elegir agentes sin preguntas
-npx skills add TU_USUARIO/senior-qa-skill -g -a claude-code -a cursor -y
+npx skills add slzno/senior-qa-skill -g -a claude-code -a cursor -y
 ```
 
 Actualizar despues de un push: vuelve a correr el mismo comando (usa `npx skills@latest` si tienes una version vieja del CLI en cache).
-
-## 1. Subir a GitHub
-
-Crea el repo vacio `senior-qa-skill` en GitHub (sin README) y luego:
-
-```bash
-cd senior-qa-skill
-# Cambia TU_USUARIO por tu usuario de GitHub en install.sh, install.ps1 y este README
-sed -i 's/TU_USUARIO/tu-usuario-real/g' install.sh install.ps1 README.md   # en Mac: sed -i '' ...
-
-git init
-git add .
-git commit -m "Senior QA skill v1.0.0"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/senior-qa-skill.git
-git push -u origin main
-```
-
-Con GitHub CLI es una sola linea despues del commit:
-
-```bash
-gh repo create senior-qa-skill --public --source=. --push
-```
 
 ## 2. Instalar en Claude Code
 
@@ -62,17 +39,17 @@ gh repo create senior-qa-skill --public --source=. --push
 
 Dentro de Claude Code:
 ```
-/plugin marketplace add TU_USUARIO/senior-qa-skill
+/plugin marketplace add slzno/senior-qa-skill
 /plugin install senior-qa@senior-qa-marketplace
 ```
 
 **Opcion B - con el script:**
 ```bash
 # global, disponible en todos tus proyectos
-curl -fsSL https://raw.githubusercontent.com/TU_USUARIO/senior-qa-skill/main/install.sh | bash -s -- claude
+curl -fsSL https://raw.githubusercontent.com/slzno/senior-qa-skill/main/install.sh | bash -s -- claude
 
 # o solo en un proyecto (se puede commitear para todo el equipo)
-curl -fsSL https://raw.githubusercontent.com/TU_USUARIO/senior-qa-skill/main/install.sh | bash -s -- claude-project
+curl -fsSL https://raw.githubusercontent.com/slzno/senior-qa-skill/main/install.sh | bash -s -- claude-project
 ```
 
 **Opcion C - manual:** copia `skills/senior-qa/` a `~/.claude/skills/senior-qa/` (global) o a `.claude/skills/senior-qa/` dentro del proyecto.
@@ -84,7 +61,7 @@ Uso: "revisa esta mejora como QA", "prueba el cambio del login" o directamente `
 Desde la raiz del proyecto donde lo quieres usar:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/TU_USUARIO/senior-qa-skill/main/install.sh | bash -s -- cursor
+curl -fsSL https://raw.githubusercontent.com/slzno/senior-qa-skill/main/install.sh | bash -s -- cursor
 ```
 
 Windows (PowerShell), con el repo clonado:

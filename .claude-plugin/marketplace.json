@@ -1,0 +1,11 @@
+{
+  "name": "senior-qa-marketplace",
+  "owner": { "name": "Slzno" },
+  "plugins": [
+    {
+      "name": "senior-qa",
+      "source": "./",
+      "description": "Senior QA multi-stack para Android, Laravel, Drupal, React, Next.js, Tailwind y React Native"
+    }
+  ]
+}
